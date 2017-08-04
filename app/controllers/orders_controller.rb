@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
       description: "Khurram Virani's Jungle Order",
+      receipt_email: "ngyankai@hotmail.com",
       currency:    'cad'
     )
   end
