@@ -1,0 +1,10 @@
+
+Thank you for your purchase
+===============================================
+Total cost: <%=@order.total_cents/100.to_f%>
+Items Purchased: 
+<%@order.line_items.each do |line_item|%>
+<%= line_item.product.name %> <%= line_item.quantity%>
+<%end%>
+ 
+Thanks for the purchase and have a great day!

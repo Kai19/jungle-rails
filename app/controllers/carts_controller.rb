@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_filter :authorize
   def show
+    @user = User.find(session[:user_id])
   end
 
   def add_item
