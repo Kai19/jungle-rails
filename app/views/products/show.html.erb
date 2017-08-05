@@ -12,10 +12,10 @@
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
 
-  <% total_rating = 0%>
-  <% @product.reviews.each do |review|%>
-    <% total_rating += review.rating%>
-  <%end%>
+      <% total_rating = 0%>
+      <% @product.reviews.each do |review|%>
+        <% total_rating += review.rating%>
+      <%end%>
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
@@ -28,20 +28,44 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
           <dt>Overall rating</dt>
-          <dd><%= total_rating %></dd>
+          <%if(@product.reviews.length === 0)%>
+            <dd>Not yet rated</dd>
+          <%else%>
+            <dd><%= total_rating/@product.reviews.length.to_f %></dd>
+          <%end%>
         </dl>
       </div>
     </div>
-  <% @product.reviews.each do |review|%>
-    <div class="review">
-      <dt>Rating</dt>
-      <dd><%= review.rating%></dd>
-      <dt>Description</dt>
-      <dd><%= review.description%></dd>
-      <dt>By User_id</dt>
-      <dd><%= review.user_id%></dd>
-    </div>
+  <% if current_user%>
+    <%= form_for([@product, @review]) do |form|%>
+      <div class="field">
+        <%= form.label(:rating) %>
+        <%= form.select(:rating, [["1",1],["2",2],["3",3],["4",4],["5",5]]) %>
+      </div>
+
+      <div class="field">
+        <%= form.label(:description) %>
+        <%= form.text_area(:description, {id: :description}) %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <%end%>
   <%end%>
+    <% @product.reviews.reverse_each do |review|%>
+      <div class="review">
+        <dt>Rating</dt>
+        <dd><%= review.rating%></dd>
+        <dt>Description</dt>
+        <dd><%= review.description%></dd>
+        <dt>By User_id</dt>
+        <dd><%= review.user_id%></dd>
+      </div>
+       <%if current_user == review.user%> 
+        <%= link_to 'Delete', review_path(review.id), method: :delete %>
+       <%end%> 
+    <%end%>
   </article>
 
 </section>

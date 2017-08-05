@@ -1,0 +1,12 @@
+              List of relations
+ Schema |       Name        | Type  |  Owner  
+--------+-------------------+-------+---------
+ public | categories        | table | vagrant
+ public | line_items        | table | vagrant
+ public | orders            | table | vagrant
+ public | products          | table | vagrant
+ public | reviews           | table | vagrant
+ public | schema_migrations | table | vagrant
+ public | users             | table | vagrant
+(7 rows)
+
