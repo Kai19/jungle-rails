@@ -12,6 +12,11 @@
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
 
+  <% total_rating = 0%>
+  <% @product.reviews.each do |review|%>
+    <% total_rating += review.rating%>
+  <%end%>
+
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt>Name</dt>
@@ -22,10 +27,21 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Overall rating</dt>
+          <dd><%= total_rating %></dd>
         </dl>
       </div>
     </div>
-
+  <% @product.reviews.each do |review|%>
+    <div class="review">
+      <dt>Rating</dt>
+      <dd><%= review.rating%></dd>
+      <dt>Description</dt>
+      <dd><%= review.description%></dd>
+      <dt>By User_id</dt>
+      <dd><%= review.user_id%></dd>
+    </div>
+  <%end%>
   </article>
 
 </section>
