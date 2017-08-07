@@ -10,3 +10,122 @@
 body {
   padding-top: 70px;
 }
+
+input {
+  ::-webkit-input-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  ::-moz-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  :-ms-input-placeholder {
+     color: rgba(255,255,255,0.7);
+  }
+  &:focus {
+    outline: 0 transparent solid;
+    ::-webkit-input-placeholder {
+     color: rgba(0,0,0,0.7);
+    }
+    ::-moz-placeholder {
+       color: rgba(0,0,0,0.7);
+    }
+    :-ms-input-placeholder {
+       color: rgba(0,0,0,0.7);
+    }
+  }
+}
+
+h1.register{
+  display: inline-block;
+  margin-left: 435px;
+
+}
+
+h1.login{
+  display: inline-block;
+  margin-left: 525px;
+
+}
+
+form {
+  //background: #222;
+  //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+  font-size: 20px;
+  height: 60px;
+  margin-top: 200px;
+  margin: auto;
+  size: 200%;
+  width: 500px;
+  margin-bottom: 500px;
+}
+
+.login-text {
+  //background: hsl(40,30,60);
+  //border-bottom: .5rem solid white;
+  color: black;
+  font-size: 1.4em;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: .5rem;
+  text-align: center;
+  //text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
+  .fa-stack-1x {
+    color: black;
+  }
+}
+
+.login-username, .login-password {
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(green, .5);
+  color: black;
+  display: block;
+  margin: 0.8em;
+  padding: 1em;
+  font-size: 13px;
+  transition: 250ms background ease-in;
+  width: calc(100% - 3rem);
+  &:focus {
+    background: white;
+    color: black;
+    transition: 250ms background ease-in;
+  }
+}
+
+.login-submit {
+  background: transparent;
+  border: 1px solid white;
+  color: black;
+  display: block;
+  font-size: 13px;
+  margin: 1em auto;
+  min-width: 1px;
+  padding: .7em;
+  transition: 250ms background ease-in;
+  &:hover, &:focus {
+    background: white;
+    color: black;
+    transition: 250ms background ease-in;
+  }
+}
+
+.login-submit:hover {
+  color: black;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.underlay-black {
+  background: #fafafa;
+  z-index: -1;
+}
+
+
