@@ -55,18 +55,20 @@
     </div>
     <%end%>
   <%end%>
-  <h3 class="user-reviews">User reviews</h3>
-    <% @product.reviews.reverse_each do |review|%>
-      <div class="review">
-    
-        <p class="rating">Rating: <%= review.rating%></p>
-        <p class="userid">By User_id: <%= review.user_id%></p>
-        <p class="review-description">Description</p>
-        <p><%= review.description%></p>
-       <%if current_user == review.user%> 
-        <%= link_to 'Delete', review_path(review.id), method: :delete, class: "button" %>
-       <%end%> 
-      </div>
-    <%end%>
+  <% if @product.reviews.length != 0%>
+    <h3 class="user-reviews">User reviews</h3>
+  <% end %>
+  <% @product.reviews.reverse_each do |review|%>
+    <div class="review">
+  
+      <p class="rating">Rating: <%= review.rating%></p>
+      <p class="userid">By User: <%= review.user.name%></p>
+      <p class="review-description">Description</p>
+      <p><%= review.description%></p>
+      <%if current_user == review.user%> 
+      <%= link_to 'Delete', review_path(review.id), method: :delete, class: "button" %>
+      <%end%> 
+    </div>
+  <%end%>
 
 </section>
