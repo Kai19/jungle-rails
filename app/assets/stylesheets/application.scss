@@ -128,4 +128,51 @@ form {
   z-index: -1;
 }
 
+li.current-user{
+  padding-top: 15px;
+  font-weight: bold;
+}
 
+.review-form{
+ border: black;
+}
+
+form.new_review{
+    padding-top: 50px;
+    width: 300px;
+    margin-left: 0px;
+    margin-bottom: 100px;
+}
+
+.rating{
+  font-weight: bold;
+}
+
+.userid{
+  font-weight: bold;
+}
+
+.review-description{
+  font-weight: bold;
+}
+
+.user-reviews{
+  font-weight: bold;
+  padding-top: 100px;
+}
+
+.review{
+  padding: 20px;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}

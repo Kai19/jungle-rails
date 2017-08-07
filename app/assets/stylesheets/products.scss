@@ -77,16 +77,14 @@ main section.categories-show {
 }
 
 main section.products-show {
-
+  height: 500px;
   .product-detail {
     img.main-img {
       max-width: 100%;
     }
   }
-
-  .review {
-    border-style: ridge; 
-  }
 }
 
-
+.new-product{
+  margin-left: 0px;
+}

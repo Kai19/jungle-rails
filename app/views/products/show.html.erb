@@ -36,36 +36,37 @@
         </dl>
       </div>
     </div>
+  </article>
   <% if current_user%>
     <%= form_for([@product, @review]) do |form|%>
+    <div class='review-form'>
       <div class="field">
         <%= form.label(:rating) %>
         <%= form.select(:rating, [["1",1],["2",2],["3",3],["4",4],["5",5]]) %>
       </div>
 
       <div class="field">
-        <%= form.label(:description) %>
         <%= form.text_area(:description, {id: :description}) %>
       </div>
 
       <div class="actions">
         <%= form.submit %>
       </div>
+    </div>
     <%end%>
   <%end%>
+  <h3 class="user-reviews">User reviews</h3>
     <% @product.reviews.reverse_each do |review|%>
       <div class="review">
-        <dt>Rating</dt>
-        <dd><%= review.rating%></dd>
-        <dt>Description</dt>
-        <dd><%= review.description%></dd>
-        <dt>By User_id</dt>
-        <dd><%= review.user_id%></dd>
-      </div>
+    
+        <p class="rating">Rating: <%= review.rating%></p>
+        <p class="userid">By User_id: <%= review.user_id%></p>
+        <p class="review-description">Description</p>
+        <p><%= review.description%></p>
        <%if current_user == review.user%> 
-        <%= link_to 'Delete', review_path(review.id), method: :delete %>
+        <%= link_to 'Delete', review_path(review.id), method: :delete, class: "button" %>
        <%end%> 
+      </div>
     <%end%>
-  </article>
 
 </section>
