@@ -2,6 +2,42 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Using Jungle
+
+If you are not yet a registered user, click 'Signup' in the top right corner and fill out the registration form:
+
+![register page](/docs/registration.png)
+
+Or log in here:
+
+![login page](/docs/login.png)
+
+Once you are registered or logged in you will be taken to the index page where you will be able view all available products:
+
+![products](/docs/index.png)
+
+Users can click product on product-img, product name or details button to view product details
+
+![product details](/docs/product-details.png)
+
+Users can click add icon to add products to cart and then checkout by clicking cart icon
+
+![user's cart](/docs/cart.png)
+
+Users can pay with credit card using Stripe
+
+![Stripe](/docs/stripe.png)
+
+Order details after sucessful payment
+![Order details](/docs/order-details.png)
+
+Admin's can remove or add to existing products
+![admin's products](/docs/admin-products.png)
+![new product](/docs/admin-new-products.png)
+
+Admin's can remove or add to existing categories
+![admin's categories](/docs/admin-cat.png)
+![new categories](/docs/admin-new-cat.png)
 
 ## Setup
 

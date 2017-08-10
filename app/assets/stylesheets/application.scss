@@ -156,6 +156,11 @@ form.new_review{
   font-weight: bold;
 }
 
+.review-head{
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .user-reviews{
   font-weight: bold;
   padding-top: 100px;
@@ -175,4 +180,12 @@ form.new_review{
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+}
+
+button.stripe-button-el{
+  float: left;
+}
+
+div.row{
+ width: 0px;
 }

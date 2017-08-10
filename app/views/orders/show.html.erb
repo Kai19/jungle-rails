@@ -6,11 +6,13 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <%= @order.email%>
-    <p> Total price: <%= @order.total_cents/100.to_f %></p>
+    <%if current_user%>
+      <p><%= @order.email%><p>
+      <p> Total price: <%= @order.total_cents/100.to_f %></p>
+    <%else%>
+      <p> Total price: <%= @order.total_cents/100.to_f %></p>
+    <%end%>
   </div>
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
   <table class="table table-bordered">
     <thead>
@@ -27,4 +29,6 @@
     <%= render 'item', line_item: line_item %>
     <% end %>
     </tbody>
+  </table>
+  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 </section>
